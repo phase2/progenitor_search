@@ -12,3 +12,7 @@ projects[search_api_solr][version] = 1.1
 projects[search_api_autocomplete][type] = module
 projects[search_api_autocomplete][subdir] = contrib
 projects[search_api_autocomplete][version] = 1.0
+
+projects[search_api_devel][type] = module
+projects[search_api_devel][subdir] = contrib
+projects[search_api_devel][version] = 1.x-dev
