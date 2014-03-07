@@ -1,7 +1,16 @@
 <?php
 
 /**
- * Implements hook_default_search_api_server().
+ * Implements hook_default_search_api_index_alter().
+ */
+function progenitor_search_default_search_api_index_alter(&$indexes) {
+  foreach ($indexes as $key => &$index) {
+    $index->read_only = (int) variable_get('progenitor_search_read_only_' . $key, FALSE);
+  }
+}
+
+/**
+ * Implements hook_default_search_api_server_alter().
  *
  * Add the following overrides to settings.php as needed:
  *   - $conf['progenitor_search_host'] = 'localhost';
@@ -11,27 +20,13 @@
  *   - $conf['progenitor_search_user'] = '';
  *   - $conf['progenitor_search_pass'] = '';
  */
-function progenitor_search_default_search_api_server() {
-  $items = array();
-  $items['search_primary'] = entity_import('search_api_server', '{
-    "name" : "Search Primary",
-    "machine_name" : "search_primary",
-    "description" : "Configured for use of Phase2 DevCloud Search Service.",
-    "class" : "search_api_solr_service",
-    "options" : {
-      "scheme" : "' . variable_get('progenitor_search_scheme', 'http') . '",
-      "host" : "' . variable_get('progenitor_search_host', 'localhost') . '",
-      "port" : "' . variable_get('progenitor_search_port', '8983') . '",
-      "path" : "\\' . variable_get('progenitor_search_path', '/solr') . '",
-      "http_user" : "' . variable_get('progenitor_search_user', '') . '",
-      "http_pass" : "' . variable_get('progenitor_search_pass', '') . '",
-      "excerpt" : 0,
-      "retrieve_data" : 0,
-      "highlight_data" : 0,
-      "http_method" : "POST"
-    },
-    "enabled" : "1",
-    "rdf_mapping" : []
-  }');
-  return $items;
+function opensf_search_default_search_api_server_alter(&$servers) {
+  foreach ($servers as $key => $server) {
+    $servers[$key]->options['scheme'] = variable_get('progenitor_search_scheme_' . $key , $servers[$key]->options['scheme']);
+    $servers[$key]->options['host'] = variable_get('progenitor_search_host_' . $key , $servers[$key]->options['host']);
+    $servers[$key]->options['port'] = variable_get('progenitor_search_port_' . $key , $servers[$key]->options['port']);
+    $servers[$key]->options['path'] = variable_get('progenitor_search_path_' . $key , $servers[$key]->options['path']);
+    $servers[$key]->options['http_user'] = variable_get('progenitor_search_http_user_' . $key , $servers[$key]->options['http_user']);
+    $servers[$key]->options['http_pass'] = variable_get('progenitor_search_http_pass_' . $key , $servers[$key]->options['http_pass']);
+  }
 }

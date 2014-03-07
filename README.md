@@ -32,16 +32,17 @@ drush search-api-index
 Here are the available configuration options.
 
 ```php
-$conf['phase2_search_host'] = 'localhost';
-$conf['phase2_search_port'] = '8983';
-$conf['phase2_search_path'] =  '/solr';
-$conf['phase2_search_scheme'] = 'https';
-$conf['phase2_search_user'] = '';
-$conf['phase2_search_pass'] = '';
+$conf['progenitor_search_host_<server_name>'] = 'localhost';
+$conf['progenitor_search_port_<server_name>'] = '8983';
+$conf['progenitor_search_path_<server_name>'] =  '/solr';
+$conf['progenitor_search_scheme_<server_name>'] = 'https';
+$conf['progenitor_search_user_<server_name>'] = '';
+$conf['progenitor_search_pass_<server_name>'] = '';
+$conf['progenitor_search_read_only_<index_name>'] = FALSE;
 ```
 
 ## Recommendations
-If you are using the Solr search module ecosystem, check out the *Phase2 SOLR" stack.
+If you are using the Solr search module ecosystem, check out the (TBD) *Progenitor SOLR" stack.
 
 ## Maintainers
 
