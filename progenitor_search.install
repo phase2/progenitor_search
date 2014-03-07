@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * Installation routines for the Phase2 Search module.
+ * Installation routines for the Progenitor Search module.
  */
 
 /**
  * Implements hook_install().
  */
-function phase2_search_install() {
+function progenitor_search_install() {
 }
 
 /**
