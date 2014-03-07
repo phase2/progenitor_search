@@ -1,4 +1,4 @@
-# Phase2 Search
+# Progenitor Search
 
 This Stack module provides a recipe for advanced site search via Search API and
 Search API Solr integration. It makes available pre-selected modules for more 
