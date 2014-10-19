@@ -20,7 +20,7 @@ function progenitor_search_default_search_api_index_alter(&$indexes) {
  *   - $conf['progenitor_search_user'] = '';
  *   - $conf['progenitor_search_pass'] = '';
  */
-function opensf_search_default_search_api_server_alter(&$servers) {
+function progenitor_search_default_search_api_server_alter(&$servers) {
   foreach ($servers as $key => $server) {
     $servers[$key]->options['scheme'] = variable_get('progenitor_search_scheme_' . $key , $servers[$key]->options['scheme']);
     $servers[$key]->options['host'] = variable_get('progenitor_search_host_' . $key , $servers[$key]->options['host']);
