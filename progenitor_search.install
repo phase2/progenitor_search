@@ -11,9 +11,8 @@ function progenitor_search_install() {
 }
 
 /**
- * @todo
- *   In the event we add a Phase2 utility module, add it as a dependency and
- *   drop this function.
+ *  In the event we add a Progenitor utility module, add it as a dependency
+ *  and drop this function.
  */
 if (!function_exists('phase2_variable_default')) {
   /**
@@ -24,7 +23,7 @@ if (!function_exists('phase2_variable_default')) {
    * defaults different from the modules using the variable, but not overriding
    * any intended configurations.
    */
-  function phase2_variable_default($name, $value) {
+  function progenitor_variable_default($name, $value) {
     global $conf;
 
     if (!isset($conf[$name])) {

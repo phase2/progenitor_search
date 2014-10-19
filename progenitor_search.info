@@ -6,7 +6,3 @@ package = Progenitor
 dependencies[] = search_api
 dependencies[] = search_api_solr
 dependencies[] = search_api_views
-
-features[features_api][] = api:1
-; Included for revert purposes only.
-features[search_api_server][] = search_primary

@@ -1,6 +1,7 @@
 # Progenitor Search
 
-This Stack module provides a recipe for advanced site search via Search API and
+This [Progenitor Stack](http://github.com/phase2/progenitor) provides the
+dependencies and a module for advanced site search via Search API and
 Search API Solr integration. It makes available pre-selected modules for more 
 advanced search features.
 
@@ -23,7 +24,7 @@ This search is given sane defaults, and can be configured via settings.php.
 If you change any of these settings, you will need to run the following:
 
 ```bash
-drush features-revert phase2_search
+drush features-revert <your search integration module>
 drush cc all
 drush search-api-clear
 drush search-api-index
@@ -40,13 +41,6 @@ $conf['progenitor_search_user_<server_name>'] = '';
 $conf['progenitor_search_pass_<server_name>'] = '';
 $conf['progenitor_search_read_only_<index_name>'] = FALSE;
 ```
-
-## Recommendations
-If you are using the Solr search module ecosystem, check out the (TBD) *Progenitor SOLR" stack.
-
-## Maintainers
-
-* Adam Ross <aross@phase2technology.com>
 
 ## Keywords
 
