@@ -8,6 +8,7 @@ projects[search_api][version] = 1.13
 projects[search_api_solr][type] = module
 projects[search_api_solr][subdir] = contrib
 projects[search_api_solr][version] = 1.6
+projects[search_api_solr][patch][2343111] = https://www.drupal.org/files/issues/search_api_solr-2343111-OR-Filters-14.patch
 
 projects[search_api_autocomplete][type] = module
 projects[search_api_autocomplete][subdir] = contrib
